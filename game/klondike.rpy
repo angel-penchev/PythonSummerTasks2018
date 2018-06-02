@@ -49,7 +49,7 @@ init python:
             self.deal = deal
 
             # Create the table, stock, and waste.
-            self.table = t = Table(base="card/base.png", back="card/back.png")
+            self.table = t = Table(base="Assets/Cards/base.png", back="Assets/Cards/back.png")
             self.stock = t.stack(LEFT, TOP, xoff=0, yoff=0, click=True)
             self.waste = t.stack(LEFT + COL_SPACING, TOP, xoff=CARD_XSPACING, drag=DRAG_TOP, show=self.deal, click=True)
 
@@ -69,7 +69,7 @@ init python:
             for rank in range(1, 14):
                 for suit in range(0, 4):
                     value = (suit, rank)
-                    t.card(value, "card/%d.png" % self.card_num(suit, rank))
+                    t.card(value, "Assets/Cards/%d.png" % self.card_num(suit, rank))
                     t.set_faceup(value, False)
                     self.stock.append(value)
 
@@ -332,5 +332,3 @@ init python:
                 "Spades",
                 "Hearts",
                 "Diamonds" ][suit]
-
-

@@ -46,7 +46,7 @@ init -1 python hide:
     theme.roundrect(
 
         ## The color of an idle widget face.
-        widget = "#7AA27B",
+        widget = "#19a9c8",
 
         ## The color of a focused widget face.
         widget_hover = "#A3C7A3",
@@ -68,7 +68,7 @@ init -1 python hide:
         label = "#ffffff",
 
         ## The color of a frame containing widgets.
-        frame = "#245536",
+        frame = "#2aafcc",
 
         ## If this is True, the in-game window is rounded. If False,
         ## the in-game window is square.
@@ -77,12 +77,12 @@ init -1 python hide:
         ## The background of the main menu. This can be a color
         ## beginning with '#', or an image filename. The latter
         ## should take up the full height and width of the screen.
-        mm_root = "mainmenu.jpg",
+        mm_root = "Assets/Backgrounds/MainMenuBackground.jpg",
 
         ## The background of the game menu. This can be a color
         ## beginning with '#', or an image filename. The latter
         ## should take up the full height and width of the screen.
-        gm_root = "table.jpg",
+        gm_root = "Assets/Backgrounds/TableBackground.jpg",
 
         ## And we're done with the theme. The theme will customize
         ## various styles, so if we want to change them, we should

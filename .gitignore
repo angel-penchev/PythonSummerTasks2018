@@ -245,10 +245,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-
-# End of https://www.gitignore.io/api/linux,python,windows,pycharm,pycharm+all
-
-
 ## Start of Ren'Py Section
 
 *.rpyc
@@ -338,3 +334,6 @@ tutorial/game/tutorial_director.rpy
 launcher/theme
 
 ## End of Ren'Py Section
+
+
+# End of https://www.gitignore.io/api/linux,python,windows,pycharm,pycharm+all

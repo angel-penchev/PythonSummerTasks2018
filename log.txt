@@ -1,20 +1,21 @@
-Sat Jun  2 14:14:40 2018
+Sat Jun  2 14:34:47 2018
 Linux-4.13.0-43-generic-x86_64-with-debian-stretch-sid
 Ren'Py 6.99.14.3.3347
  
 
-Bootstrap to the start of init.init took 0.09s
+Bootstrap to the start of init.init took 0.08s
 Early init took 0.00s
 Loader init took 0.01s
 Loading error handling took 0.02s
-Loading script took 0.07s
-Loading save slot metadata. took 0.00s
+Loading script took 0.11s
+Loading save slot metadata. took 0.01s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
 Running init code took 0.07s
 Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
+Backing up script files to '/home/tsb/.renpy/backups/BeloteClient':
 Dump and make backups. took 0.07s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
@@ -24,12 +25,12 @@ Creating interface object took 0.08s
 Cleaning stores took 0.00s
 Init translation took 0.01s
 Build styles took 0.00s
-Load screen analysis took 0.01s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
-Prepare screens took 0.05s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.05s
+Prepare screens took 0.04s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
+Save bytecode. took 0.06s
 Running _start took 0.00s
 Performance test:
 Interface start took 0.02s
@@ -381,11 +382,11 @@ Texture testing:
 - 512px textures work.
 - 1024px textures work.
 - 2048px textures work.
-Total time until interface ready: 0.812100172043s
+Total time until interface ready: 0.941395998001s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.002829 seconds.
-- Frame drawn at 0.004638 seconds.
-- Frame drawn at 0.006166 seconds.
-- Frame drawn at 0.008571 seconds.
-- 0.008571 seconds to render 5 frames.
+- Frame drawn at 0.002343 seconds.
+- Frame drawn at 0.005483 seconds.
+- Frame drawn at 0.006735 seconds.
+- Frame drawn at 0.008253 seconds.
+- 0.008253 seconds to render 5 frames.

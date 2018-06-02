@@ -23,11 +23,11 @@ init -1 python hide:
     ## This controls the title of the window, when Ren'Py is
     ## running in a window.
 
-    config.window_title = u"Ren'Py Cardgame Demo"
+    config.window_title = u"Blank Studios - Online Belote"
 
     #########################################
     # Layouts
-    
+
     ## This enables the use of an in-game menu that is made out of
     ## buttons.
 
@@ -35,7 +35,7 @@ init -1 python hide:
 
     #########################################
     # Themes
-    
+
     ## We then want to call a theme function. themes.roundrect is
     ## a theme that features the use of rounded rectangles. It's
     ## the only theme we currently support.
@@ -58,7 +58,7 @@ init -1 python hide:
         ## example, the current value of a preference.)
         widget_selected = "#ffffff",
 
-        ## The color of a disabled widget face. 
+        ## The color of a disabled widget face.
         disabled = "#426143",
 
         ## The color of disabled widget text.
@@ -86,7 +86,7 @@ init -1 python hide:
 
         ## And we're done with the theme. The theme will customize
         ## various styles, so if we want to change them, we should
-        ## do so below.            
+        ## do so below.
         )
 
 
@@ -227,7 +227,7 @@ init -1 python hide:
 
     config.after_load_transition = dissolve
 
-    
+
     #########################################
     ## Default values of Preferences.
 
@@ -244,4 +244,3 @@ init -1 python hide:
     config.default_text_cps = 0
 
     config.save_directory = "cardgame-11754"
-    

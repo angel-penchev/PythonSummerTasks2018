@@ -1,35 +1,36 @@
-Sat Jun  2 17:22:00 2018
+Sun Jun  3 17:05:25 2018
 Linux-4.13.0-43-generic-x86_64-with-debian-stretch-sid
 Ren'Py 6.99.14.3.3347
  
 
-Bootstrap to the start of init.init took 0.09s
-Early init took 0.00s
+Bootstrap to the start of init.init took 0.15s
+Early init took 0.01s
 Loader init took 0.01s
-Loading error handling took 0.02s
-Loading script took 0.08s
-Loading save slot metadata. took 0.04s
+Loading error handling took 0.03s
+Loading script took 0.13s
+Loading save slot metadata. took 0.01s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.07s
+Running init code took 0.11s
 Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
-Dump and make backups. took 0.08s
+Backing up script files to '/home/tsb/.renpy/backups/BeloteClient':
+Dump and make backups. took 0.07s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc. took 0.02s
 DPI scale factor: 1.000000
-Creating interface object took 0.09s
+Creating interface object took 0.08s
 Cleaning stores took 0.00s
 Init translation took 0.01s
 Build styles took 0.00s
-Load screen analysis took 0.02s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.06s
 Prepare screens took 0.05s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
+Save bytecode. took 0.07s
 Running _start took 0.00s
 Performance test:
 Interface start took 0.03s
@@ -381,11 +382,11 @@ Texture testing:
 - 512px textures work.
 - 1024px textures work.
 - 2048px textures work.
-Total time until interface ready: 0.899688005447s
+Total time until interface ready: 1.17369389534s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.002812 seconds.
-- Frame drawn at 0.004189 seconds.
-- Frame drawn at 0.006082 seconds.
-- Frame drawn at 0.007605 seconds.
-- 0.007605 seconds to render 5 frames.
+- Frame drawn at 0.003073 seconds.
+- Frame drawn at 0.004507 seconds.
+- Frame drawn at 0.005737 seconds.
+- Frame drawn at 0.007122 seconds.
+- 0.007122 seconds to render 5 frames.

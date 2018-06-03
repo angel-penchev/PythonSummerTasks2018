@@ -1,4 +1,4 @@
-# klondike.rpy - Belote Solitaire
+# belote.rpy - Belote Script
 #
 # Copyright 2008-2015 Tom Rothamel <pytom@bishoujo.us>
 #

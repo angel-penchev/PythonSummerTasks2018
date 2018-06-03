@@ -16,7 +16,7 @@ label start:
     scene bg table
 
     python:
-        k = Klondike(1)
+        k = Belote(1)
         k.set_sensitive(False)
         k.show()
 
@@ -107,7 +107,7 @@ label newgame:
     scene bg table
 
     python:
-        k = Klondike(1)
+        k = Belote(1)
         k.sensitive = False
         k.show()
 
@@ -152,7 +152,7 @@ label splashscreen:
     scene bg table
     $ renpy.pause(1.0)
 
-    show text "According to legend, prospectors in the klondike would carry with them a deck of cards."
+    show text "According to legend, prospectors in the Belote would carry with them a deck of cards."
     with dissolve
     with Pause(5.0)
     hide text

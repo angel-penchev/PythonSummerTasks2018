@@ -24,7 +24,7 @@
 
 init python:
 
-    class Belote(object):
+    class Klondike(object):
 
         # We represent a card as a (suit, rank) tuple. The suit is one of the
         # following four constants, while the rank is 1 for ace, 2 for 2,

@@ -110,14 +110,13 @@ label splashscreen:
     with dissolve
     with Pause(1.0)
 
-    show text "Gosho now logs in!"
     with dissolve
-    with Pause(4.0)
-    hide text
+    $ player_name = renpy.input("What do you want your screen name to be?")
+    $ player_name = player_name.strip()
     with dissolve
-    with Pause(1.0)
+    with Pause(0.2)
 
-    show text "Welcome back, Gosho!"
+    show text "Welcome back, %s!" % player_name
     with dissolve
     with Pause(3.0)
     hide text

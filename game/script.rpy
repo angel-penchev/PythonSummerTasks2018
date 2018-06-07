@@ -65,7 +65,6 @@ label giveup:
 
         "Yes":
 
-            "Oh well, better luck next time."
 
             jump newgame
 
@@ -105,7 +104,7 @@ label splashscreen:
 
     show text "Belote Online Client"
     with dissolve
-    with Pause(5.0)
+    with Pause(3.5)
     hide text
     with dissolve
     with Pause(1.0)
@@ -118,9 +117,9 @@ label splashscreen:
 
     show text "Welcome back, %s!" % player_name
     with dissolve
-    with Pause(3.0)
+    with Pause(2.5)
     hide text
     with dissolve
-    with Pause(1.0)
+    with Pause(0.5)
 
     return

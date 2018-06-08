@@ -34,35 +34,59 @@ init python:
 
             # Create the table, stock, and waste.
             self.table = t = Table(base="Assets/Cards/base.png", back="Assets/Cards/back.png")
-            self.stock = t.stack(WIDTH / 2, HEIGHT / 2, xoff=0, yoff=0, click=False)
+                                                # Creates a table and defines the base and back images of the stocks and card
+            self.MainStock = t.stack(WIDTH / 2, HEIGHT / 2, xoff = 0, yoff = 0, base = None, click = False, drag = DRAG_NONE, drop = False, hidden = False)
 
 
             # Create the card stock and shuffle it.
-            for Rank in range(1, 8):            # Runs for 7, 8, 9, 10, Jacks (J), Queens (Q), King (K) & Aces (A)
+            for Rank in range(0, 8):            # Runs for 7, 8, 9, 10, Jacks (J), Queens (Q), King (K) & Aces (A)
                 for Suit in range(0, 4):        # Runs for Clubs, Spades, Hearts and Diamounds
                     Value = (Suit, Rank)
-                    t.card(Value, "Assets/Cards/%d.png" % self.card_num(Suit, Rank))    # Adds the card images
-                    t.set_faceup(Value, False)  # Sets whether the card is facing Up or Down
-                    self.stock.append(Value)    # Adds cards to the stock
+                    t.card(Value, "Assets/Cards/%d.png" % self.CardNumber(Suit, Rank))
+                                                # Associates the image with a given card
+                    t.set_faceup(Value, True)   # Sets whether the card is facing Up or Down
+                    self.MainStock.append(Value)# Adds cards to the stock
 
-            self.stock.shuffle()                # Shufles the cards in the stock
-
-
-            self.PlayersCards = [];             # Defines the array containing the 4 players' cards
-            self.PlayersStocks = [];            # Defines the array containing the current player stock
-
-            for Player in range(0, 4):          # Runs for the 4 Players
-                for CardsAmount in range(0, 8):
-                    self.PlayersStocks.append(t.stack((WIDTH / 3.5) + PLAYER_CARDS_SPACING * CardsAmount, HEIGHT - ((PLAYER_BOARDER_SPACING + 40) * (Player + 1) - 40), xoff=0, yoff=0, drag=DRAG_TOP, drop=True))
-                    self.PlayersCards.append(self.PlayersStocks[Player])
+            self.MainStock.shuffle()                # Shufles the cards in the stock
 
 
+            # Creates the players' card stocks
+            self.PlayerStocks = [];              # Defines the array containing the 4 players' card stocks
+            for Player in range (0, 4):          # Runs for the 4 Players
+                    self.PlayerStocks.append(t.stack((WIDTH / 3.5), HEIGHT - ((PLAYER_BOARDER_SPACING + 40) * (Player + 1) - 40), xoff = 75, yoff = 0, drag = DRAG_TOP, drop = True))
+                                                # Creates a player stock with position parameters
+
+
+            # Deals the initial 3 cards to all the players
+            for Player in range (0, 4):
+                for CardsAmount in range (0, 3):
+                    current = self.MainStock.deal()
+                    self.PlayerStocks[Player].append(current)
+
+            # Deals the following 2 cards to all the players
+            for Player in range (0, 4):
+                for CardsAmount in range (0, 3):
+                    current = self.MainStock.deal()
+                    self.PlayerStocks[Player].append(current)
+
+
+
+            # TODO: Create trump selection game part here!
+
+
+
+            # Deals the last 3 cards to all the players
+            for Player in range (0, 4):
+                for CardsAmount in range (0, 2):
+                    current = self.MainStock.deal()
+                    self.PlayerStocks[Player].append(current)
 
         # Start of Definitions Section
 
-        def card_num(self, suit, rank):
-            ranks = [ None, 1, 29, 25, 21, 17, 13, 9, 5 ]
-            return suit + ranks[rank]
+        # CardNumber - Used for generating the file name of a given card
+        def CardNumber(self, Suit, rank):
+            ranks = [29, 25, 21, 17, 13, 9, 5, 1]
+            return Suit + ranks[rank]
 
 
         def show(self):
@@ -88,8 +112,8 @@ init python:
                     rv = self.foundation_drag(evt)
 
             elif evt.type == "click":
-                if evt.stack == self.stock:
-                    rv = self.stock_click(evt)
+                if evt.stack == self.MainStock:
+                    rv = self.MainStock_click(evt)
 
             elif evt.type == "doubleclick":
                 if (evt.stack in self.tableau) or (evt.stack is self.waste):
@@ -116,7 +140,7 @@ init python:
 
 
         def card_name(self, c):
-            suit, rank = c
+            Suit, rank = c
             return  [
                 "INVALID",
                 "Ace",
@@ -135,4 +159,6 @@ init python:
                 "Clubs",
                 "Spades",
                 "Hearts",
-                "Diamonds" ][suit]
+                "Diamonds" ][Suit]
+
+        # End of Definitions Section

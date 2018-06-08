@@ -26,20 +26,21 @@ init python:
             # New Constants
             WIDTH = 1200
             HEIGHT = 900
-            PLAYER_BOARDER_SPACING = 60
+            PLAYER_BOARDER_SPACING = WIDTH / 20
             PLAYER_CARDS_SPACING = 75
+            CENTER_OFFSET = 75
 
             # Store the parameters.
             self.deal = deal
 
             # Create the table, stock, and waste.
-            self.table = t = Table(base="Assets/Cards/base.png", back="Assets/Cards/back.png")
+            self.table = t = Table(base="Assets/Cards/BaseTransparent.png", back="Assets/Cards/Back.png")
                                                 # Creates a table and defines the base and back images of the stocks and card
             self.MainStock = t.stack(WIDTH / 2, HEIGHT / 2, xoff = 0, yoff = 0, base = None, click = False, drag = DRAG_NONE, drop = False, hidden = False)
 
 
             # Create the card stock and shuffle it.
-            for Rank in range(0, 8):            # Runs for 7, 8, 9, 10, Jacks (J), Queens (Q), King (K) & Aces (A)
+            for Rank in range (0, 8):           # Runs for 7, 8, 9, 10, Jacks (J), Queens (Q), King (K) & Aces (A)
                 for Suit in range(0, 4):        # Runs for Clubs, Spades, Hearts and Diamounds
                     Value = (Suit, Rank)
                     t.card(Value, "Assets/Cards/%d.png" % self.CardNumber(Suit, Rank))
@@ -47,27 +48,33 @@ init python:
                     t.set_faceup(Value, True)   # Sets whether the card is facing Up or Down
                     self.MainStock.append(Value)# Adds cards to the stock
 
-            self.MainStock.shuffle()                # Shufles the cards in the stock
+            self.MainStock.shuffle()            # Shufles the cards in the stock
 
 
             # Creates the players' card stocks
-            self.PlayerStocks = [];              # Defines the array containing the 4 players' card stocks
-            for Player in range (0, 4):          # Runs for the 4 Players
-                    self.PlayerStocks.append(t.stack((WIDTH / 3.5), HEIGHT - ((PLAYER_BOARDER_SPACING + 40) * (Player + 1) - 40), xoff = 75, yoff = 0, drag = DRAG_TOP, drop = True))
-                                                # Creates a player stock with position parameters
+            self.PlayerCardStocks = [
+                                 t.stack(WIDTH / 3, HEIGHT - PLAYER_BOARDER_SPACING, xoff = 55, yoff = 0, show = 8, base = None, drag = DRAG_CARD, drop = True),
+                                 t.stack(WIDTH - PLAYER_BOARDER_SPACING, HEIGHT / 3, xoff = 0, yoff = 55, show = 8, base = None, drag = DRAG_CARD, drop = True),
+                                 t.stack(WIDTH / 3, PLAYER_BOARDER_SPACING, xoff = 55, yoff = 0, show = 8, base = None, drag = DRAG_CARD, drop = True),
+                                 t.stack(PLAYER_BOARDER_SPACING, HEIGHT / 3, xoff = 0, yoff = 55, show = 8, base = None, drag = DRAG_CARD, drop = True)
+                                ];              # Defines the array containing the 4 players' card stocks
+
 
 
             # Deals the initial 3 cards to all the players
             for Player in range (0, 4):
                 for CardsAmount in range (0, 3):
                     current = self.MainStock.deal()
-                    self.PlayerStocks[Player].append(current)
+                    self.PlayerCardStocks[Player].append(current)
+
+                    # TODO - Somehow implement this: t.set_rotate(Value, 90 * Player)
+
 
             # Deals the following 2 cards to all the players
             for Player in range (0, 4):
-                for CardsAmount in range (0, 3):
+                for CardsAmount in range (0, 2):
                     current = self.MainStock.deal()
-                    self.PlayerStocks[Player].append(current)
+                    self.PlayerCardStocks[Player].append(current)
 
 
 
@@ -77,9 +84,10 @@ init python:
 
             # Deals the last 3 cards to all the players
             for Player in range (0, 4):
-                for CardsAmount in range (0, 2):
+                for CardsAmount in range (0, 3):
                     current = self.MainStock.deal()
-                    self.PlayerStocks[Player].append(current)
+                    self.PlayerCardStocks[Player].append(current)
+
 
         # Start of Definitions Section
 
@@ -92,6 +100,8 @@ init python:
         def show(self):
             self.table.show()
 
+        def set_rotate(card, rotation):
+            self.table.set_rotate(card, rotation)
 
         def hide(self):
             self.table.hide()

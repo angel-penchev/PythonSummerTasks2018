@@ -32,7 +32,7 @@ label quick_continue:
 
         python:
 
-            ui.textbutton("Give Up", ui.jumps("giveup"), xalign=.02, yalign=.98)
+            ui.textbutton("Restart", ui.jumps("Restart"), xalign=.02, yalign=.98)
             k.set_sensitive(True)
             event = k.interact()
 
@@ -52,20 +52,14 @@ label win:
 
     jump newgame
 
-label giveup:
+label Restart:
 
     $ k.set_sensitive(False)
 
-    show dim
-    show eileen happy
-    with dissolve
-
+    "Restart?"
+    
     menu:
-        e "Are you sure you want to give up?"
-
         "Yes":
-
-
             jump newgame
 
         "No":
@@ -75,13 +69,11 @@ label giveup:
 label newgame:
 
     menu:
-        e "Would you like to try again?"
 
         "Yes":
             pass
 
         "No":
-            e "Well, I hope to see you again soon."
             return
 
     e "Okay, here we go!"

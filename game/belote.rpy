@@ -88,6 +88,12 @@ init python:
                     current = self.MainStock.deal()
                     self.PlayerCardStocks[Player].append(current)
 
+            self.PlayCenterStock = [
+                    t.stack(WIDTH / 2, (HEIGHT / 2) + CENTER_OFFSET, xoff = 0, yoff = 0, show = 1, base=None, drag = DRAG_NONE, drop = True),
+                    t.stack((WIDTH / 2) + CENTER_OFFSET, HEIGHT / 2, xoff = 0, yoff = 0, show = 1, base=None, drag = DRAG_NONE, drop = True),
+                    t.stack(WIDTH / 2, (HEIGHT / 2) - CENTER_OFFSET, xoff = 0, yoff = 0, show = 1, base=None, drag = DRAG_NONE, drop = True),
+                    t.stack((WIDTH / 2) - CENTER_OFFSET, HEIGHT / 2, xoff = 0, yoff = 0, show = 1, base=None, drag = DRAG_NONE, drop = True)
+                    ];
 
         # Start of Definitions Section
 

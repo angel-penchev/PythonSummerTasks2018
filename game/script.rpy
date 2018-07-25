@@ -57,7 +57,7 @@ label Restart:
     $ k.set_sensitive(False)
 
     "Restart?"
-    
+
     menu:
         "Yes":
             jump newgame
@@ -102,12 +102,12 @@ label splashscreen:
     with Pause(1.0)
 
     with dissolve
-    $ player_name = renpy.input("What do you want your screen name to be?")
-    $ player_name = player_name.strip()
+    $ PlayerName = renpy.input("What do you want your screen name to be?")
+    $ PlayerName = PlayerName.strip()
     with dissolve
     with Pause(0.2)
 
-    show text "Welcome back, %s!" % player_name
+    show text "Welcome back, %s!" % PlayerName
     with dissolve
     with Pause(2.5)
     hide text

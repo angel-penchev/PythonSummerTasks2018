@@ -53,11 +53,11 @@ init python:
 
             # Creates the players' card stocks
             self.PlayerCardStocks = [
-                                 t.stack(WIDTH / 3, HEIGHT - PLAYER_BOARDER_SPACING, xoff = 55, yoff = 0, show = 8, base = None, drag = DRAG_CARD, drop = True),
-                                 t.stack(WIDTH - PLAYER_BOARDER_SPACING, HEIGHT / 3, xoff = 0, yoff = 55, show = 8, base = None, drag = DRAG_CARD, drop = True),
-                                 t.stack(WIDTH / 3, PLAYER_BOARDER_SPACING, xoff = 55, yoff = 0, show = 8, base = None, drag = DRAG_CARD, drop = True),
-                                 t.stack(PLAYER_BOARDER_SPACING, HEIGHT / 3, xoff = 0, yoff = 55, show = 8, base = None, drag = DRAG_CARD, drop = True)
-                                ];              # Defines the array containing the 4 players' card stocks
+                                     t.stack(WIDTH / 3, HEIGHT - PLAYER_BOARDER_SPACING, xoff = 55, yoff = 0, show = 8, base = None, drag = DRAG_CARD, drop = True),
+                                     t.stack(WIDTH - PLAYER_BOARDER_SPACING, HEIGHT / 3, xoff = 0, yoff = 55, show = 8, base = None, drag = DRAG_CARD, drop = True),
+                                     t.stack(WIDTH / 3, PLAYER_BOARDER_SPACING, xoff = 55, yoff = 0, show = 8, base = None, drag = DRAG_CARD, drop = True),
+                                     t.stack(PLAYER_BOARDER_SPACING, HEIGHT / 3, xoff = 0, yoff = 55, show = 8, base = None, drag = DRAG_CARD, drop = True)
+                                    ];              # Defines the array containing the 4 players' card stocks
 
 
 
@@ -89,11 +89,11 @@ init python:
                     self.PlayerCardStocks[Player].append(current)
 
             self.PlayCenterStock = [
-                    t.stack(WIDTH / 2, (HEIGHT / 2) + CENTER_OFFSET, xoff = 0, yoff = 0, show = 1, base=None, drag = DRAG_NONE, drop = True),
-                    t.stack((WIDTH / 2) + CENTER_OFFSET, HEIGHT / 2, xoff = 0, yoff = 0, show = 1, base=None, drag = DRAG_NONE, drop = True),
-                    t.stack(WIDTH / 2, (HEIGHT / 2) - CENTER_OFFSET, xoff = 0, yoff = 0, show = 1, base=None, drag = DRAG_NONE, drop = True),
-                    t.stack((WIDTH / 2) - CENTER_OFFSET, HEIGHT / 2, xoff = 0, yoff = 0, show = 1, base=None, drag = DRAG_NONE, drop = True)
-                    ];
+                                    t.stack(WIDTH / 2, (HEIGHT / 2) + CENTER_OFFSET, xoff = 0, yoff = 0, show = 1, base=None, drag = DRAG_NONE, drop = True),
+                                    t.stack((WIDTH / 2) + CENTER_OFFSET, HEIGHT / 2, xoff = 0, yoff = 0, show = 1, base=None, drag = DRAG_NONE, drop = True),
+                                    t.stack(WIDTH / 2, (HEIGHT / 2) - CENTER_OFFSET, xoff = 0, yoff = 0, show = 1, base=None, drag = DRAG_NONE, drop = True),
+                                    t.stack((WIDTH / 2) - CENTER_OFFSET, HEIGHT / 2, xoff = 0, yoff = 0, show = 1, base=None, drag = DRAG_NONE, drop = True)
+                                   ];
 
         # Start of Definitions Section
 

@@ -1,0 +1,7 @@
+# 2D Car Racing Game ChangeLog
+
+-version alpha 1.0
+	* Generated project structure with the PyCharm IDE
+	* Created "ChangeLog" file
+	* Created "LICENSE" file
+	* Created an empty "README.md" file

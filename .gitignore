@@ -209,6 +209,7 @@ venv.bak/
 [Ll]ib64
 [Ll]ocal
 [Ss]cripts
+[Tt]ests
 pyvenv.cfg
 pip-selfcheck.json
 

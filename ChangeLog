@@ -1,6 +1,22 @@
 # 2D Car Racing Game ChangeLog
 
--version alpha 1.0
+-version alpha 1.2 - Created player car object with movement capabilities
+    * The game now could be launched by the "racing-game.py" inside the project root
+    * Updated several file and folder names for better project representation
+    * Created a player car object, capable of moving forward, backward and turn at certain angle
+	* Added & improved variables inside the Car class
+	* Included the pygame module inside the "requirements.txt"
+	* Created initial Obstacle class
+
+
+-version alpha 1.1 - Generated initial project files
+	* Imported the "pygame" library
+	* Created a simple empty game window and defined the game width, height, logo & title
+	* Defined a "Car" class inside the new "vehicles.py" script
+	* Added ".py" extension to "__init__"
+
+
+-version alpha 1.0 - Initial Commit
 	* Generated project structure with the PyCharm IDE
 	* Created "ChangeLog" file
 	* Created "LICENSE" file

@@ -2,7 +2,7 @@ import pygame, math, sys
 from pygame.locals import *
 
 TURN_SPEED = 5
-ACCELERATION = 1
+ACCELERATION = 0.01
 MAX_FORWARD_SPEED = 10
 MAX_REVERSE_SPEED = -5
 BG = (0, 0, 0)

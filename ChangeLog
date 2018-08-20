@@ -1,5 +1,11 @@
 # 2D Car Racing Game ChangeLog
 
+-version alpha 1.2.1 - Enabled auto-acceleration & fixed minor bugs
+    * Fixed an issue where the car normal & turn speed reset at every loop instance
+    * Set the car to auto-accelerate
+    * Adapted the code to the PEP-8 Python Standard
+
+
 -version alpha 1.2 - Created player car object with movement capabilities
     * The game now could be launched by the "racing-game.py" inside the project root
     * Updated several file and folder names for better project representation

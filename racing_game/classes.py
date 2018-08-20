@@ -6,7 +6,7 @@ class Car:
     width = 32
     height = 32
 
-    def __init__(self, position, type, maximum_forward_speed, maximum_backward_speed, acceleration, turn_speed):
+    def __init__(self, position, model, maximum_forward_speed, maximum_backward_speed, acceleration, turn_speed):
 
         # Speed & direction variables
         self.speed = 0
@@ -20,9 +20,9 @@ class Car:
         self.turn_speed = turn_speed
 
         # Car appearance variables
-        self.type = type
+        self.type = model
 
-        self.car = pygame.image.load(type)
+        self.car = pygame.image.load(model)
 
     def accelerate(self):
         self.speed += 5

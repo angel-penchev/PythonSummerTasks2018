@@ -1,5 +1,10 @@
 # 2D Car Racing Game ChangeLog
 
+-version alpha 1.2.2 - Code quality improvements
+    * Transferred car positioning algorithm from the main() function to the drive() function in the "Car" class itself
+    * Changed the maximum height the car object can reach
+    * Other minor changes
+
 -version alpha 1.2.1 - Enabled auto-acceleration & fixed minor bugs
     * Fixed an issue where the car normal & turn speed reset at every loop instance
     * Set the car to auto-accelerate

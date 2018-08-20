@@ -1,6 +1,4 @@
 import pygame
-import math
-import time
 from pygame.locals import *
 from .constants import windowSettings
 from .classes import Car
@@ -28,7 +26,7 @@ def main():
     game_is_running = True  # Sets the game to start
 
     # Generates and draws the player car object
-    player = Car(position, "./racing_game/assets/logo32x32.png", 7, 0, 0.1, 30)
+    player = Car(position, "./racing_game/assets/logo32x32.png", 5, -1, 0.1, 30)
 
     while game_is_running:
         for event in pygame.event.get():
@@ -59,42 +57,29 @@ def main():
         # [TEMP] - Makes the screen black
         screen.fill(background)
 
-        print(player.speed)
-        # Speed acceleration algorithm
-        player.speed += (player.acceleration - k_down)  # Calculates the forward/backward speed
-        player.direction += (k_left - k_right)  # Changes the turn direction of the car
-        if player.speed > player.maximum_forward_speed:
-            player.speed = player.maximum_forward_speed  # Limits the maximum forward speed
-        elif player.speed < player.maximum_backward_speed:
-            player.speed = player.maximum_backward_speed  # Limits the maximum backward speed
-
-        # Generates new position based on current position, speed and direction
-
-        player_x, player_y = position
-        rad = player.direction * math.pi / 180
-        player_x -= player.speed * math.sin(rad)
-        player_y -= player.speed * math.cos(rad)
+        # Calls the player drive function;
+        player.drive(k_left, k_right, k_down)
 
         # Making sure the car doesn't go out of bounds
-        if player_x < 0:
-            player_x = 0
-        elif player_x > windowSettings["width"]:
-            player_x = windowSettings["width"]  # Prevents from the exiting from the x-axis
+        if player.x < 0:
+            player.x = 0
+        elif player.x > windowSettings["width"]:
+            player.x = windowSettings["width"]  # Prevents from the exiting from the x-axis
 
-        if player_y < windowSettings["height"] / 1.8:
-            player_y = windowSettings["height"] / 1.8
-        elif player_y > windowSettings["height"]:
-            player_y = windowSettings["height"]  # Prevents from the exiting from the y-axis
+        if player.y < windowSettings["height"] / 1.3:
+            player.y = windowSettings["height"] / 1.3
+        elif player.y > windowSettings["height"]:
+            player.y = windowSettings["height"]  # Prevents from the exiting from the y-axis
 
         # Updates the current player position
-        position = (player_x, player_y)
+        player.position = (player.x, player.y)
 
         # Rotates the car image for direction of the arrow pressed
         rotated = pygame.transform.rotate(player.car, player.direction)
 
         # Positioning the car on the active screen
         rect = rotated.get_rect()
-        rect.center = position
+        rect.center = player.position
 
         # Renders the car object to screen
         screen.blit(rotated, rect)
